@@ -847,6 +847,29 @@ Name must be at least 3 characters long
 ####################################
 # * Chapter 13: Weight Converter * #
 ####################################
+1:16:23 on YT
+
+We will create a program that will convert kg or lbs or vice versa
+
+First we need to get some inputs from the user, we then create variables from the inputs of the user, then we need to create if statement to see which unit to convert, lbs or kg
+
+$Terminal
+1 weight = int(input('Weight: ')) <- we ask the user to input their weight, we stpre the value in weight variable, since we cannot mutiply a string by a float, we must use the int function to convert the weight value into a interger 
+2 unit = input('(L)bs or (K)g: ') <- we also ask the user to input if their weight is in Lbs or Kg, we store the value in the unit variable
+3 if unit.upper() == "L": <- We need to add the upper dot operator to convert what ever the user inputs into a upper case L
+4     converted = weight * 0.45 <- we mulitply the users weight by 0.45, we store the value in the converted 
+5     print(f"You are {converted} kilos") <- we use a formatted string and curly brackets to add out variables
+6 else:
+7     converted = weight // 0.45
+8     print(f"You are {converted} pounds")
+
+Result: 
+will convert what ever you input
+
+###############################
+# * Chapter 14: While Loops * #
+###############################
+1:20:49 on YT
 
 
 
