@@ -918,7 +918,7 @@ You can rename name variables by doing Shift F6
 
 $Terminal
 1 secret_number = 9 <- we set our number that the user must guess
-2 guess_count = 0 starting with 0 guess counts
+2 guess_count = 0 <- starting with 0 guess counts
 3 guess_limit = 3 <- settings our limit for guesses
 4 while guess_count < guess_limit: <- our condition we set is as long as the guess count is less than 3 (guess limit), the indented code will run
 5    guess =  int(input('Guess: ')) <- we get our input from our user, we get it as a string, we need to convert it into a interger, we store all of that in the guess variable
