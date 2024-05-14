@@ -871,7 +871,69 @@ will convert what ever you input
 ###############################
 1:20:49 on YT
 
+We use while loops to execute a block of code multiple times. Its good for interactive programs and games.
 
+We start by writting a while statement followed by a condition, as long as the condition is met it will run the indented code
+
+$Terminal
+1 i = 1 <- we set a variable
+2 while i <= 5: <- we set the condition that, as long as i is less than or equal to 5, it will run the indented code below
+3     print(i) <- i will be printed here
+4     i = i + 1 <- we will increase the value of i untill the condition is not met, therefore the indented code will stop running
+5 print("Done") <- when the conditions are not met anymore, this line of code will be executed
+
+Result:
+1
+2
+3
+4
+5
+Done
+
+We can make things interesting by adding strings to the expressions
+
+$Terminal
+1 i = 1
+2 while i <= 5:
+3     print('*' * i) <- what will happen is the asterisks will multiply itself by the value of i and print the result
+4     i = i + 1
+5 print("Done")
+
+Result:
+*
+**
+***
+****
+*****
+Done
+
+It is the same process as above however we are printing the asterisks multiplied by the value of i. It will keep making a half pyramid until i is greater than 6, then line 6 will be executed since the condition in line 2 i not met
+
+#################################
+# * Chapter 15: Guessing game * #
+#################################
+
+We are going to create a guessing game where you will have 3 tries to figure out the secret number otherwise it will say you have failed
+You can rename name variables by doing Shift F6
+
+$Terminal
+1 secret_number = 9 <- we set our number that the user must guess
+2 guess_count = 0 starting with 0 guess counts
+3 guess_limit = 3 <- settings our limit for guesses
+4 while guess_count < guess_limit: <- our condition we set is as long as the guess count is less than 3 (guess limit), the indented code will run
+5    guess =  int(input('Guess: ')) <- we get our input from our user, we get it as a string, we need to convert it into a interger, we store all of that in the guess variable
+6    guess_count += 1 <- each guess we add 1 to our guess count
+7    if guess == secret_number: <- we use an if statement to set that if the user guessess the secret number, the indented line of code below will 
+8        print('You won!')
+9        break <- we use the break function to end the while loop, otherwise it will keep asking you to guess
+10 else: <- if we run out of guess, the conditin of the while loop will not be met and this else statement will run
+11     print('Sorry, you have failed')
+
+First we set our variables, try to write out logical names for the variables so that others may understand it better. We use a while loop to keep our user guessing. The condition of the the while loop is that the guess count variable must be less than 3 guesses, otherwise it will print, sorry, you have failed. In our while loop, in the indented line of code, we ask the user for a guess, we store that value in a input, we convert the input into a interger and store that as guess variable. After making a guess, the guess count value gets increased by 1. If the user guesses the right number, so if the user input the correct number it will print you won and break (stop) the while loop. If the user keep guessing, and the guess count reaches 3, it will print sorry you have failed. Guess the right amount of times, else you have failed.
+
+############################
+# * Chapter 16: Car Game * #
+############################
 
 
 
