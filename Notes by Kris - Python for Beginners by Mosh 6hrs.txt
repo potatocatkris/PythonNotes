@@ -235,7 +235,9 @@ There are default values, so if you do not provide a value it will default to 0
 
 $Terminal
 1 course = 'Python for Beginners'
-2 print(course[0:]) <- since there is no value for the last index, it will default to 0, therefore all the characters in the string will be shown
+2 print(course[0:])
+
+line 2 - since there is no value for the last index, it will default to 0, therefore all the characters in the string will be shown
 
 Result: Python for Beginners
 
@@ -260,8 +262,10 @@ We may use this to copy string from variables
 
 $Terminal
 1 course = 'Python for Beginners' course variable holds 'Python for Beginners' 
-2 another = course[:] another variable will copy whats in course variable
+2 another = course[:]
 3 print(another)
+
+line 2 - another variable will copy whats in course variable
 
 Result: Python for Beginners
 
@@ -292,8 +296,9 @@ $Terminal
 1 first = 'John'
 2 last = 'Smith'
 3 message = first + ' [' + last + '] is a coder' 
-^- we make a message variable, we add the first name, followed by the [ bracket in a string, plus the last name, plus a string that has the ending bracket ], followed by is a coder
 4 print(message)
+
+line 3 - we make a message variable, we add the first name, followed by the [ bracket in a string, plus the last name, plus a string that has the ending bracket ], followed by is a coder
 
 Result: John [Smith] is a coder
 
@@ -304,8 +309,9 @@ $Terminal
 2 last = 'Smith'
 3 message = first + ' [' + last + '] is a coder'
 4 msg = f'{first} [{last}] is a coder'
-          ^- we use curly braces to define place holders or holes in our string. When we run our program these holes get filed with the value of our variables
 5 print(message)
+
+line 4 - we use curly braces to define place holders or holes in our string. When we run our program these holes get filed with the value of our variables
 
 Result: 
 John [Smith] is a coder - you should get the same result if you remove line 3, the formatted string should work
@@ -463,8 +469,10 @@ Augmented assignment operator
 
 $Terminal
 1 x = 10 <- we assign a variable
-2 x = x + 3 <- to add to our variable, we must run this code, remember Python runs from top to bottom so the original value of x is 10, since we are adding plus 3, the new value of x will be 13
+2 x = x + 3
 3 print(x)
+
+line 2 - to add to our variable, we must run this code, remember Python runs from top to bottom so the original value of x is 10, since we are adding plus 3, the new value of x will be 13
 
 Result: 
 13
@@ -473,8 +481,10 @@ We can use the augmented assignment operator, we have enhanced the assignment op
 
 $Terminal
 1 x = 10
-2 x += 3 <- have can use this instead of the code above, we are adding plus 3 to the original value of x
+2 x += 3
 3 print(x)
+
+line 2 - have can use this instead of the code above, we are adding plus 3 to the original value of x
 
 Result:
 13
@@ -520,8 +530,10 @@ Explanation and result: First you would do 2 to the power of 2, which is 4. We d
 We may change the order of operations by adding parentheses  
 
 $Terminal
-1 x = (10 + 3) * 2 ** 2 <- first we do 10+3 which is 13, then we do 2**2 which is 4, finally we do 13*4 which is 52
+1 x = (10 + 3) * 2 ** 2
 2 print(x)
+
+line 1 - first we do 10+3 which is 13, then we do 2**2 which is 4, finally we do 13*4 which is 52
 
 Result: 
 52
@@ -562,15 +574,20 @@ If you want to write a program that involves complex math calculations, you will
 This is how you import the math module into Python
 
 $Terminal
-1 import math <- now the math module is an object like a string, we can use its methods or functions using a dot operator, math.()
-2 print(math.ceil(2.9)) <- math.ceil() will give you the ceiling of a number
+1 import math
+2 print(math.ceil(2.9))
+
+line 1 - now the math module is an object like a string, we can use its methods or functions using a dot operator, math.()
+line 2 - math.ceil() will give you the ceiling of a number
 
 Result:
 3
 
 $Terminal
 1 import math
-2 print(math.ceil(2.9)) <- math.floor() will give you the floor of a number
+2 print(math.ceil(2.9))
+
+line 2 - math.floor() will give you the floor of a number
 
 Result:
 2
@@ -590,23 +607,38 @@ Below we will have some conditions set by this text file
 
 conditions.txt
 
-if it's hot <- here is 1 condition
-	It's a hot day <- tell user its a hot day
-	Drink plenty of water <- tell the to drink water
-otherwise if it's cold <- here is another condition, if the condition is true it will tell the results below
-	It's a cold day
-	Wear warm clothes
-otherwise <- another condition is if its neither hot or cold, it will tell the reselt below
-	It's a lovely day
+1 if it's hot
+2 	It's a hot day
+3 	Drink plenty of water
+4 otherwise if it's cold
+5 	It's a cold day
+6 	Wear warm clothes
+7 otherwise
+8	It's a lovely day
+
+line 1 - here is 1 condition
+line 2 - tell user its a hot day
+line 3 - tell the user to drink water
+line 4 - here is another condition, if the condition is true it will tell the results below
+line 5 - tell the user its a cold day
+line 6 - tell user to wear more clothes
+line 7 - another condition is if its neither hot or cold, it will tell the reselt below
+line - tell user its a lovely day
+
 
 To write a program using if statements we first will define some boolean variable
 
 $Terminal
-1 is_hot = True <- we define a boolean variable
+1 is_hot = True
 2 
-3 if is_hot: <- when we add a colon, Pyton will automatically indent our cursor, it will execute any code if the boolean varibale is true
-4     print("It's a hot day") <- This line of code will run if the above condition is true
-5 print("Enjoy your day") <- Press Shift + Tab to return the cursor back the beginning, terminating the block above
+3 if is_hot:
+4     print("It's a hot day")
+5 print("Enjoy your day")
+
+line 1 - we define a boolean variable
+line 3 - when we add a colon, Pyton will automatically indent our cursor, it will execute any code if the boolean varibale is true
+line 4 - This line of code will run if the above condition is true
+line 5 -  Press Shift + Tab to return the cursor back the beginning, terminating the block above
 
 We have set a boolean variabe that is true. We use a if statement to start a new block. Within the block we will print the "It's a hot day". We terminate the if statement block by pressing Shift + Tab which will return the cursos back the the beginning
 
@@ -633,8 +665,11 @@ $Terminal
 2 
 3 if is_hot:
 4    print("It's a hot day")
-5    print("Drink plenty of water") <- we add this print statement to our block, as long a line is indented, it will be included to the if statement block 
-6 print("Enjoy your day") <- Shift + Tab to end the if statement block and start a new line of code
+5    print("Drink plenty of water") 
+6 print("Enjoy your day")
+
+line 5 - we add this print statement to our block, as long a line is indented, it will be included to the if statement block
+line 6 - Shift + Tab to end the if statement block and start a new line of code
 
 Result:
 It's a hot day
@@ -646,13 +681,16 @@ If it is not a hot day, we can use the else function to run a different line of 
 $Terminal
 1 is_hot = False
 2 
-3 if is_hot: <- if this statement is true, the line of code below will run, if its false, the other line of code will run (else)
+3 if is_hot:
 4     print("It's a hot day")
 5     print("Drink plenty of water")
-6 else: <- the boolean value is false, therefore else 
+6 else:
 7     print("It's a cold day")
 8     print("Wear warm clothes")
 9 print("Enjoy your day")
+
+line 3 - if this statement is true, the line of code below will run, if its false, the other line of code will run (else)
+line 6 - the boolean value is false, therefore else will be executed 
 
 Result:
 It's a cold day
@@ -665,16 +703,22 @@ $Terminal
 1 is_hot = False
 2 is_cold = True
 3 
-4 if is_hot: <- Python will execute the if statement first, since it is false, it will ignore the 2 lines of codes indented below
+4 if is_hot
 5     print("It's a hot day")
 6     print("Drink plenty of water")
-7 elif is_cold <- since the variable is true, it will run the 2 lines of codes indented below
+7 elif is_cold
 8     print("It's a cold day")
 9     print("Wear warm clothes")
-10 else: <- since one of conditions above is true, this else statement will be ingnored
+10 else:
 11    print("It's a lovely day")
 12 
-13 print("Enjoy your day") <- this line of code will always be presented since its its own line, seperate from the other statements
+13 print("Enjoy your day")
+
+line 4 - Python will execute the if statement first, since it is false, it will ignore the 2 lines of codes indented below
+line 7 - since the variable is true, it will run the 2 lines of codes indented below
+line 10 - since one of conditions above is true, this else statement will be ingnored
+line 13 - this line of code will always be presented since its its own line, seperate from the other statements
+
 
 Result:
 It's a cold day
@@ -693,14 +737,19 @@ otherwise(if not)
  - they need to put down 20%
 
 $Terminal
-1 price = 1000000 <- we set some variables
-2 has_good_credit = True <- set our boolean value
+1 price = 1000000 
+2 has_good_credit = True
 3 
 4 if has_good_credit: 
 5     down_payment = 0.1 * price
 6 else:
 7     down_payment = 0.2 * price
-8 print(f"Down payment: ${down_payment}") <- we use a formatted string, we add a label "Down payment", we use curly brackets to present our down_payment variable, we also add a $ sign before the curly brackets so it shows a dollar sign before the variable
+8 print(f"Down payment: ${down_payment}")
+
+line 1 - we set some variables
+line 2 - set our boolean value
+line 8 - we use a formatted string, we add a label "Down payment", we use curly brackets to present our down_payment variable, we also add a $ sign before the curly brackets so it shows a dollar sign before the variable
+
 
 Result:
 Down payment: $100000.0
@@ -719,8 +768,10 @@ $Terminal
 1 has_high_income = True
 2 has_good_credit = True
 3
-4 if has_good_credit and has_high_income: <- if both conditions are true, then the indented code below will be run
+4 if has_good_credit and has_high_income:
 5     print("Eligible for loan")
+
+line 4 - if both conditions are true, then the indented code below will be run
 
 Result:
 Eligible for loan
@@ -834,12 +885,18 @@ otherwise
 $Terminal
 1 name = "J"
 2 
-3 if len(name) < 3: <- we use the len funtion on name to see if its less than 3 characters long
-4     print("Name must be at least 3 characters long") <- if it is less than 3 characters long, this will be printed
-5 elif len(name) > 50: <- we use len function to see if its greater than 50 characters long
-6     print("Name must be a maximum of 50 characters") <- if its greater than 50 characters long, this will be printed
+3 if len(name) < 3:
+4     print("Name must be at least 3 characters long")
+5 elif len(name) > 50:
+6     print("Name must be a maximum of 50 characters")
 7 else:
-8     print("Name looks good!") <- if the name is between 3 and 50 characters long, this will be printed
+8     print("Name looks good!")
+
+line 3 - we use the len funtion on name to see if its less than 3 characters long
+line 4 - if it is less than 3 characters long, this will be printed
+line 5 - we use len function to see if its greater than 50 characters long
+line 6 - if its greater than 50 characters long, this will be printed
+line 8 - if the name is between 3 and 50 characters long, this will be printed
 
 Result:
 Name must be at least 3 characters long
@@ -854,14 +911,20 @@ We will create a program that will convert kg or lbs or vice versa
 First we need to get some inputs from the user, we then create variables from the inputs of the user, then we need to create if statement to see which unit to convert, lbs or kg
 
 $Terminal
-1 weight = int(input('Weight: ')) <- we ask the user to input their weight, we stpre the value in weight variable, since we cannot mutiply a string by a float, we must use the int function to convert the weight value into a interger 
-2 unit = input('(L)bs or (K)g: ') <- we also ask the user to input if their weight is in Lbs or Kg, we store the value in the unit variable
-3 if unit.upper() == "L": <- We need to add the upper dot operator to convert what ever the user inputs into a upper case L
-4     converted = weight * 0.45 <- we mulitply the users weight by 0.45, we store the value in the converted 
-5     print(f"You are {converted} kilos") <- we use a formatted string and curly brackets to add out variables
+1 weight = int(input('Weight: ')) 
+2 unit = input('(L)bs or (K)g: ')
+3 if unit.upper() == "L":
+4     converted = weight * 0.45 
+5     print(f"You are {converted} kilos")
 6 else:
 7     converted = weight // 0.45
 8     print(f"You are {converted} pounds")
+
+line 1 - we ask the user to input their weight, we stpre the value in weight variable, since we cannot mutiply a string by a float, we must use the int function to convert the weight value into a interger
+line 2 - we also ask the user to input if their weight is in Lbs or Kg, we store the value in the unit variable
+line 3 - we need to add the upper dot operator to convert what ever the user inputs into a upper case L
+line 4 - we mulitply the users weight by 0.45, we store the value in the converted
+line 5 - we use a formatted string and curly brackets to add out variables
 
 Result: 
 will convert what ever you input
@@ -876,11 +939,17 @@ We use while loops to execute a block of code multiple times. Its good for inter
 We start by writting a while statement followed by a condition, as long as the condition is met it will run the indented code
 
 $Terminal
-1 i = 1 <- we set a variable
-2 while i <= 5: <- we set the condition that, as long as i is less than or equal to 5, it will run the indented code below
-3     print(i) <- i will be printed here
-4     i = i + 1 <- we will increase the value of i untill the condition is not met, therefore the indented code will stop running
-5 print("Done") <- when the conditions are not met anymore, this line of code will be executed
+1 i = 1
+2 while i <= 5:
+3     print(i)
+4     i = i + 1
+5 print("Done")
+
+line 1 - we set a variable
+line 2 - we set the condition that, as long as i is less than or equal to 5, it will run the indented code below
+line 3 - i will be printed here
+line 4 - we will increase the value of i untill the condition is not met, therefore the indented code will stop running
+line 5 - when the conditions are not met anymore, this line of code will be executed
 
 Result:
 1
@@ -895,9 +964,11 @@ We can make things interesting by adding strings to the expressions
 $Terminal
 1 i = 1
 2 while i <= 5:
-3     print('*' * i) <- what will happen is the asterisks will multiply itself by the value of i and print the result
+3     print('*' * i)
 4     i = i + 1
 5 print("Done")
+
+line 3 - what will happen is the asterisks will multiply itself by the value of i and print the result
 
 Result:
 *
@@ -917,24 +988,33 @@ We are going to create a guessing game where you will have 3 tries to figure out
 You can rename name variables by doing Shift F6
 
 $Terminal
-1 secret_number = 9 <- we set our number that the user must guess
-2 guess_count = 0 <- starting with 0 guess counts
-3 guess_limit = 3 <- settings our limit for guesses
-4 while guess_count < guess_limit: <- our condition we set is as long as the guess count is less than 3 (guess limit), the indented code will run
-5    guess =  int(input('Guess: ')) <- we get our input from our user, we get it as a string, we need to convert it into a interger, we store all of that in the guess variable
-6    guess_count += 1 <- each guess we add 1 to our guess count
-7    if guess == secret_number: <- we use an if statement to set that if the user guessess the secret number, the indented line of code below will 
+1 secret_number = 9
+2 guess_count = 0
+3 guess_limit = 3
+4 while guess_count < guess_limit: 
+5    guess =  int(input('Guess: '))
+6    guess_count += 1
+7    if guess == secret_number:
 8        print('You won!')
-9        break <- we use the break function to end the while loop, otherwise it will keep asking you to guess
-10 else: <- if we run out of guess, the conditin of the while loop will not be met and this else statement will run
+9        break 
+10 else: 
 11     print('Sorry, you have failed')
+
+line 1 - we set our number that the user must guess
+line 2 - starting with 0 guess counts
+line 3 - settings our limit for guesses
+line 4 - our condition we set is as long as the guess count is less than 3 (guess limit), the indented code will run
+line 5 - we get our input from our user, we get it as a string, we need to convert it into a interger, we store all of that in the guess variable
+line 6 - each guess we add 1 to our guess count
+line 7 - we use an if statement to set that if the user guessess the secret number, the indented line of code below will 
+line 9 - we use the break function to end the while loop, otherwise it will keep asking you to guess
+line 10 - if we run out of guess, the conditin of the while loop will not be met and this else statement will run, guess the right number else you have failed
 
 First we set our variables, try to write out logical names for the variables so that others may understand it better. We use a while loop to keep our user guessing. The condition of the the while loop is that the guess count variable must be less than 3 guesses, otherwise it will print, sorry, you have failed. In our while loop, in the indented line of code, we ask the user for a guess, we store that value in a input, we convert the input into a interger and store that as guess variable. After making a guess, the guess count value gets increased by 1. If the user guesses the right number, so if the user input the correct number it will print you won and break (stop) the while loop. If the user keep guessing, and the guess count reaches 3, it will print sorry you have failed. Guess the right amount of times, else you have failed.
 
 ############################
 # * Chapter 16: Car Game * #
 ############################
-
 
 
 
