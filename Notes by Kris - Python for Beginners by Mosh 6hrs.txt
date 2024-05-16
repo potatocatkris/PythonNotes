@@ -983,6 +983,7 @@ It is the same process as above however we are printing the asterisks multiplied
 #################################
 # * Chapter 15: Guessing game * #
 #################################
+1:24:14
 
 We are going to create a guessing game where you will have 3 tries to figure out the secret number otherwise it will say you have failed
 You can rename name variables by doing Shift F6
@@ -1015,8 +1016,128 @@ First we set our variables, try to write out logical names for the variables so 
 ############################
 # * Chapter 16: Car Game * #
 ############################
+1:30:58
 
+We are going to make a game where we can start and stop a car, we may quit from the program and ask for help
 
+$Terminal
+1 command = ""
+2 while command.lower() != 'quit':
+3     command = input("> ")
+4     if command.lower() == "start":
+5         print("Car started...")
+6     elif command.lower() == "stop":
+7         print("Car stopped.")
 
+line 1 - we set a command variable with an empty string
+line 2 - we set a while condition, while command does not equal to quit, the indented code below will run. The user may type in lower or upper case quit so we will have to add a lower or upper operator after our command. You choose which one you want, for this tutorial we are using lower
+line 3 - we will need the user to enter a command. we use the input function, and what ever the user inputs will be stored in the command variable
+line 4 - if the user inputs start, then the string from line 5 will be printed
+line 6 - otherwise if the user inputs stop, the string from line 7 will be printed
 
+Note: we have a term in coding to represent code that gets repeated over and over, its called dry (dont repeat yourself)
+
+We can fix this by removing the dot operator from the command variable and add it to the end of our input function in line 3, that way, everything that the user inputs will be changed to lower case, or uppcase case if you chose so
+
+$Terminal
+1 command = ""
+2 while command != 'quit':
+3     command = input("> ").lower() <- add lower operator here
+4     if command == "start":
+5         print("Car started...")
+6     elif command == "stop":
+7         print("Car stopped.")
+
+We will need to add a help option to our game as well as put in a message if the user inputs a command the program does not know
+
+$Terminal
+1 command = ""
+2 while command != 'quit':
+3     command = input("> ").lower()
+4     if command == "start":
+5         print("Car started...")
+6     elif command == "stop":
+7         print("Car stopped.")
+8     elif command == "help":
+9         print('''
+10        start - to start the car
+11        stop - to stop the car
+12        quit - to quit
+13        ''')
+14    else:
+15        print("Sorry I don't understand that!")
+
+Our program didnt work. The reason is that the way we currently have our program set up is that it compares the input of the user with the if and elif statements. In our case if the inputs anything other than start, stop, help, it will print the sorry i dont understand that message. To fix this we will add an elif statement after line 13 with our command variable, if the user inputs quit, it will run the indented code below and break. Since we have a duplicate of code in line 13 and line 2, what we can do is remove the condition and replace it with True condition, what that means is that the indented lines of code will keep executed until we break out of it. 
+
+$Terminal
+
+1 command = ""
+2 while True:
+3     command = input("> ").lower()
+4     if command == "start":
+5         print("Car started...")
+6    elif command == "stop":
+7          print("Car stopped.")
+8     elif command == "help":
+9         print('''
+10        start - to start the car
+11        stop - to stop the car
+12        quit - to quit
+13        ''')
+14    elif command == "quit":
+15        break
+16    else:
+17        print("Sorry I don't understand that!")
+
+Recap: We make a command variable and set it empty, reason its empty is that the it will store whatever the user inputs. We make a while statement with a True condition. The indented lines of code goes as follows, if the user enters any of the other variables, it will print its response below that variable, otherwise if the user inputs something that the program does not understand, it will tell the user sorry i dont understand. To exit out of the program the user must input break and the program will stop
+
+To remove all the space to the left of the text we simply delete the space to the left of the text. When we use triple quotations what ever the message is, it will be printed exactly how it is. 
+ 
+$Terminal
+8     elif command == "help":
+9         print('''
+10 start - to start the car
+11 stop - to stop the car
+12 quit - to quit
+13        ''')
+
+We still run into 1 more issue when we start or stop the car a second time, the same message appears. We can fix this by adding a boolean value if its true or false, is the car started or not
+
+$Terminal
+1 command = ""
+2 started = False
+3 while True:
+4     command = input(" ").lower()
+5     if command == "start":
+6         if started:
+7             print("Car is already started!")
+8         else:
+9             started = True
+10            print("Car started!")
+11    elif command == "stop":
+12        if not started:
+13            print("Car is already stopped!")
+14        else:
+15            started = False
+16            print("Car stopped.")
+17    elif command == "help":
+18        print('''
+19 start - to start the car
+20 stop - to stop the car
+21 quit - to quit
+22        ''')
+23    elif command == "quit":
+24        break
+25    else:
+26        print("Sorry I don't understand that!")
+
+line 2 - we add anothe variable so see if the car is started or not
+line 8,9,10 - if the user starts the car and tries start it again, our boolean value will be true so it will print the message, car is already started
+line 14,15,16- same as above but turning the car off
+line 12 - we use the not operator to see if the car is not started
+
+#############################
+# * Chapter 17: For Loops * #
+#############################
+1:41:55
 
