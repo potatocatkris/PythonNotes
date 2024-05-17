@@ -1180,7 +1180,92 @@ Result:
 3
 4
 
-If we want to itirate over a large list of numbers, we can use a range function
+If we want to itirate over a large list of numbers, we can use a range function to look for specific numbers or items 
 
+$Terminal
+1 for item in range(10):
+2     print(item)
 
+Result: 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
 
+It will print a range from 0- 10 but will not include 10
+
+We may also look for a specific range of numbers
+
+$Terminal
+1 for item in range(5, 10):
+2    print(item)
+
+Result:
+5
+6
+7
+8
+9
+
+We may also add steps to our range finder, the first 2 numbers are the range to look in between and the 3 number is the steps it will take. So start from 5, it will take steps of 2 until 10
+
+Result:
+5
+7
+9
+
+#Exercise: We must calculate the price of all the items in our shopping cart
+
+$Terminal
+1 prices = [10, 20, 30]
+2
+3 total = 0
+4 for price in prices:
+5     total +=  price
+6 print(f"Total: {total}")
+
+Result: 
+60
+
+line 1 - we create a prices variable that shows the prices of our shopping cart
+line 3 - we create a total variable that will show the total ammount of price of all items, we set this outside our for loop
+line 4,5 - we set a while loop with the condition that the total of the prices will be all the individual price added up together
+line 6 - we print our result using a formated string
+
+###############################
+# * Chapter 18: Nested Loops* #
+###############################
+1:47:55
+
+Nested loops are loops inside another loop, we can generate a list of coordinates (x,y) for exmaple
+
+$Terminal
+1 for x in range(4):
+2     for y in range(3):
+3         print(f'({x}, {y})')
+
+line 1 - in our first iteration of our outer loop, x is 0
+line 2 - in our first iteration of our inner loop, y is 0
+line 3 - this will print our first iterations of the loop
+
+Result:
+(0, 0)
+(0, 1)
+(0, 2)
+(1, 0)
+(1, 1)
+(1, 2)
+(2, 0)
+(2, 1)
+(2, 2)
+(3, 0)
+(3, 1)
+(3, 2)
+
+The first iteration the program will print 0,0. Then the inside loop will keep running within its range. Think of it as the outside loops will once, then the inside loop will run within its range, then go back to the outside loop once, then again run the inside loop within range.
