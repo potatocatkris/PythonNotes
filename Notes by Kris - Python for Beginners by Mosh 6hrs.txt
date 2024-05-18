@@ -1268,4 +1268,147 @@ Result:
 (3, 1)
 (3, 2)
 
-The first iteration the program will print 0,0. Then the inside loop will keep running within its range. Think of it as the outside loops will once, then the inside loop will run within its range, then go back to the outside loop once, then again run the inside loop within range.
+The first iteration the program will print 0,0. Then the inside loop will keep running within its range. Think of it as the outside loops will once, then the inside loop will run within its range, then go back to the outside loop once, then again run the inside loop within range
+
+#Exercise: Below will a result, it will be a letter F made out of x's. The challenge is to write out code to convert a list of numbers into x's in the shape of a F
+
+numbers to iterate over: [ 5, 2, 5, 2, 2]
+
+We can cheat and use a line of code like this below:
+
+$Terminal
+1 numbers = [5, 2, 5, 2, 2]
+2 for x_count in numbers:
+3     print('x' *x_count)
+
+Result:
+xxxxx
+xx
+xxxxx
+xx
+xx
+
+Lets try getting the same result using a inner loop
+
+$Terminal
+1 numbers = [5, 2, 5, 2, 2]
+2 for x_count in numbers:
+3     output:''
+4     for count in range(x_count):
+5         output += 'x'
+6     print(output)
+
+line 3 - we set a variable with a empty string
+line 4 - we make a loop where we use the range function to generate a sequence of numbers from 0 up to x_count. In our case the first iteration of x_count is 5, so range of 5 would generate the numbers 0,1,2,3,4, so the loop will run 5 times
+line 5 - we need to append ax x to our output variable, multiply the amount of x's with the variable
+line 6 - after the inner loop completes it will print the result
+
+Recap: We start with a variable containing a list of numbers. We have an outter loop where the x_count variable is set from the list of numbers in our list. Once we have our x_count number we also have a variable with an empty string. We then run our inner loop the ammount of times that the current iteration of x_count is, the first iteration the inner loop will run 5 times, resulting in x being printed 5 times, then we move to our outer loop and use the next number from the list which is 2, run the inner loop 2 times again and we get the result of 2 x's being printed out, so on and so on
+
+########################
+# * Chapter 19: Lists* #
+########################
+1:55:58
+
+More info on lists
+
+Lets set a list of names
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names)
+
+Result:
+['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+
+When we print our names variable, it will print all of the strings with the names, including the brackets and quotation makrs. We may access an individual element using an index
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names[0])
+
+line 1- our names variable with our list
+line - we will print the name from the 0 index, in this case, its John, if we want to print Bobs name would write 1 instead of 0.
+
+Result: 
+John
+
+We may also grab a name from the end using negative index 
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names[-1])
+
+Result:
+Mary
+
+We may also use a colon to select a range of items
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names[2:])
+
+line 2 - we will start from index 2 and print all names till the end
+
+Result:
+['Mosh', 'Sarah', 'Mary']
+
+
+We can also specify an end index, so lets say we want to print from index 2 to 4, it will print all the names except for the last index
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names[2:4])
+
+Result:
+['Mosh', 'Sarah']
+
+If we were to add 2 print functions, it wouldnt affect the original list, it will simply create a new list
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 print(names[2:])
+3 print(names)
+
+Result:
+['Mosh', 'Sarah', 'Mary']
+['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+
+Lets say we want to change something in our list, lets say we want to remove the h from John
+
+$Terminal
+1 names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
+2 names[0] = 'Jon'
+3 print(names)
+
+line 2 - we update the value of the name from the 0 index to Jon
+
+Result:
+['Jon', 'Bob', 'Mosh', 'Sarah', 'Mary']
+
+#Exercise: write a program to find the largest number in a list
+
+$Terminal
+1 numbers = [3, 6, 2, 8, 4, 10]
+2 max = numbers[0]
+3 for number in numbers:
+4     if number > max:
+5         max = number
+6 print(max)
+
+line 1 - we have our list of numbers
+line 2 - set our max variable
+line 3 - we set a loop where its checking the number against numbers in the list
+line 4 - we set a if condition where if the number is greater than max the indented code will run
+line 5 - if the number is greater than max it will update the max variable to that number
+line 6 - print highest number from the list
+
+Result:
+10
+
+###########################
+# * Chapter 20: 2D Lists* #
+###########################
+2:01:55
+
+
