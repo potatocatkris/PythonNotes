@@ -1411,4 +1411,79 @@ Result:
 ###########################
 2:01:55
 
+2D list are powerful and come in handy in data science and machine learning
+
+Matrix - A rectangular array of numbers
+2D list - a list that contains another lists 
+
+this is a 3x3 matrix
+    1 2 3
+    4 5 6
+    7 8 9
+
+To access the items from a list we use the matrix function and square brackets to set which list you want to search and which item. For example if you want to grab the number 2 from the first list this is how you would do it
+
+$Terminal
+1 matrix = [
+2     [1, 2, 3],
+3     [4, 5, 6],
+4     [7, 8, 9]
+5 ]
+6 print(matrix[0] [1])
+
+line 1 - we use our matrix function and use square brackets to set a list
+line 2 - again we use square brackets to create a list of items within a list, we repeat this until line 4
+line 5 - ending square bracket to close off the list
+line 6 - print the second items from first list. Remember, lists and items start from 0, not from 1
+
+Result:
+2
+
+We may also alter the value of a item in a list by using the same syntax
+
+$Terminal
+1 matrix = [
+2     [1, 2, 3],
+3     [4, 5, 6],
+4     [7, 8, 9]
+5 ]
+6 matrix [0][1] = 20
+7 print(matrix[0] [1])
+
+Result:
+20
+
+We may use nested loops to iterate over items in the matrix
+
+$Terminal
+1 matrix = [
+2     [1, 2, 3],
+3     [4, 5, 6],
+4     [7, 8, 9]
+5 ]
+6 for row in matrix:
+7     for item in row:
+8         print(item)
+
+line 6 - we make a nested loop where for each row in the matrix the indented line of code will run
+line 7 - each row contains one list of items, for each item in the row the indented line of code will run
+line 8 - print the items in rows in the matrix
+
+Result:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+################################
+# * Chapter 19: List Methods * #
+################################
+
+
+
 
