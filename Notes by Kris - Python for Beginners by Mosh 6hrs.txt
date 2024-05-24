@@ -1483,6 +1483,182 @@ Result:
 ################################
 # * Chapter 19: List Methods * #
 ################################
+2:06:09
+
+List methods or functions are things we can do in lists
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 numbers.append(20)
+3 print(numbers)
+
+Result:
+[5, 2, 1, 7, 4, 20]
+
+line 1 - we set a variable with a list of numbers
+line 2 - we can use the append function to add numbers
+line 3 - we print our result with the number added to the list
+
+If we wanted to place a number in a speciific spot we use the insert function
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 numbers.insert(0, 10)
+3 print(numbers)
+
+line 2 - we use the insert function to place items in our list. The first index will be the placement and the second index will be the item you want to insert
+
+Result:
+[10, 5, 2, 1, 7, 4]
+
+We use the remove function to remove items from the list
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 numbers.remove(5)
+3 print(numbers)
+
+Result:
+[2, 1, 7, 4]
+
+We use the clear function to remove all the items from the list
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 numbers.clear()
+3 print(numbers)
+
+Result: 
+[]
+
+We use the pop function to remove the last item from a list
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 numbers.pop()
+3 print(numbers)
+
+Result:
+[5, 2, 1, 7]
+
+If we want to search for an item we use the index function, it will give you the index of where the first instance is
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 print(numbers.index(5))
+
+Result:
+0
+
+What happens if we give a number that is not in the list?
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 print(numbers.index(50))
+
+Result:
+ValueError: 50 is not in list
+
+We can use the in operator to check the existence of an item in a list, the result will be a boolean value
+
+$Terminal
+1 numbers = [5, 2, 1, 7, 4]
+2 print(50 in numbers)
+
+Result:
+False
+
+We use the count function to count the occurances of an item in a list
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 print(numbers.count(5))
+
+Result:
+2
+
+We use the sort function to sort items in our list
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 print(numbers.sort())
+
+Result:
+None
+
+None in python means there is no value. We get this result cause are trying to print the sorting function. We need to sort our list and then print the result
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 numbers.sort
+3 print(numbers)
+
+Result:
+[1, 2, 4, 5, 5, 7]
+
+We use the reverse function to reverse our list
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 numbers.sort()
+3 numbers.reverse()
+4 print(numbers)
+
+Result:
+[7, 5, 5, 4, 2, 1]
+
+We use the copy function to items or lists
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 numbers2 = numbers.copy()
+3 numbers.append(10)
+4 print(numbers)
+
+line 2 - we create a new variable and copy our original list
+line 3 - we add 10 to our original list
+line 4 - our original list 
+
+Result:
+[5, 2, 1, 5, 7, 4, 10]
+
+When we copy stuff, it creates a new list, so when we copy our first list, it ceates a new list of the copied items. When we add something to that original list, the copied list is not affected
+
+$Terminal
+1 numbers = [5, 2, 1, 5, 7, 4]
+2 numbers2 = numbers.copy()
+3 numbers.append(10)
+4 print(numbers2)
+
+Result:
+[5, 2, 1, 5, 7, 4] 
+
+10 is not added in the result since we copied the original list before added the 10
+
+#Exercise: Create a program that removes duplicates
+
+$Terminal
+1 numbers = [2, 2, 4, 6, 3, 4, 6, 1]
+2 uniques = []
+3 for number in numbers:
+4     if number not in uniques:
+5         uniques.append(number)
+6 print(uniques)
+
+line 1 - list of numbers
+line 2 - leave this blank, we will need to iterate over the first list and if we dont have that number in the second list it will be placd in the second list
+line 3 -  checking to see if we have the number from the list
+line 4 - if we dont have the number from our unique list then line 5 will be executed
+line 5 - then we add that number to that uniques list
+
+Result:
+[2, 4, 6, 3, 1]
+
+##########################
+# * Chapter 20: Tuples * #
+##########################
+2:13:34
+
 
 
 
