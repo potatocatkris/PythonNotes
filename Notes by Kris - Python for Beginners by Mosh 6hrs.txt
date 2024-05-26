@@ -1659,6 +1659,164 @@ Result:
 ##########################
 2:13:34
 
+Tuples are lists of items, however with Tuples we can not modify them, they are inmutable. We set tuples by using parenthesis instead of square brackets. We can only get info on tuples, so we can use count and index dot operator
+
+$Terminal
+1 numbers = (1, 2, 3)
+2 print(numbers[0])
+
+line 1 - we set out tuple with parenthesis
+line 2 - we print our numbers 
+
+Result:
+1
+
+If we try changing the tuple, we get an error
+
+$Terminal
+1 numbers = (1, 2, 3)
+2 numbers[0] = 10
+3 print(numbers[0])
+
+Result:
+TypeError: 'tuple' object does not support item assignment
+
+
+#############################
+# * Chapter 21: Unpacking * #
+#############################
+2:15:45
+
+Instead of creating a variable with the coordinates item index, we assign a variable over the tuples index, think of it as labeling over the index with a variable.
+
+$Terminal
+1 coordinates = (1, 2, 3)
+2 x = coordinates[0]
+3 y = coordinates[1]
+4 z = coordinates[2]
+5
+6 x, y, z = coordinates
+
+line 1 - we set our tuple with these items
+line 2,3,4 - we create new variables to assign to each item from the tuple
+
+This is one approch we can do however it leads to a lot of code, we can condense all of this into something like in line 6
+
+line 6 - we label each index directly from the tuple, instead of writing out new variables with the index 
+
+################################
+# * Chapter 22: Dictionaries * #
+################################
+
+We use dictionaries in situations where we want to store info that comes in as key value pair
+
+Name: John Smith
+Email: john@gmail.com
+Phone: 1234
+
+Things like name, email, phone are keys, the info is store as values, together making them a key value pair
+
+The values to our keys can be almost anything, a string, a number, a boolean, etc
+
+$Terminal
+1 customer = {
+2     "name": "John Smith",
+3     "age": 30,
+4     "is_verified": True
+5 }
+6 print(customer["name"])
+
+Result:
+John Smith
+
+If you try passing a key that does not exist it will give you a key error. If you searched for "Names" it will give you the same error since its case sensitive
+
+If we were to run the same code as above but use a capital N we get an error
+6 print(customer["Name"])
+
+KeyError: 'Name'
+
+We can use the get method to get the same result, however if use the get method, Python will not give us errors 
+
+$Terminal
+1 customer = {
+2     "name": "John Smith",
+3     "age": 30,
+4     "is_verified": True
+5 }
+6 print(customer.get("birthdate"))
+
+Result:
+None 
+
+We can supply a default value, so if our key does not have a value we can add one in
+
+1 customer = {
+2     "name": "John Smith",
+3     "age": 30,
+4     "is_verified": True
+5 }
+6 print(customer.get("birthdate", "Jan 1 1980"))
+
+Result:
+Jan 1 1980
+
+We can update the key values
+
+$Terminal
+1 customer = {
+2     "name": "John Smith",
+3     "age": 30,
+4     "is_verified": True
+5 }
+6 customer["name"] = "Jack Smith"
+7 print(customer["name"])
+
+line 6 - we modify our key "name"
+
+Result: 
+Jack Smith
+
+We can add new keys in
+
+$Terminal
+1 customer = {
+2     "name": "John Smith",
+3     "age": 30,
+4     "is_verified": True
+5 }
+6 customer["birthdate"] = "Jan 1 1980"
+7 print(customer["birthdate"])
+
+Result:
+Jan 1 1980
+
+#Exercise, create a program where you input your numbers and it outputs the numbers in text
+
+$Terminal
+1 phone = input("Phone: ")
+2 digits_mapping = {
+3     '1': 'One',
+4     '2': 'Two',
+5     '3': 'Three',
+6     '4': 'Four',
+7 }
+8 output = ""
+9 for ch in phone:
+10    output += digits_mapping.get(ch, "!") + " "
+11    print(output)
+
+line 1 - create a input variable that will ask the user for input
+line 2 - create a variable with out list
+line 8 - create a output variable with an empty string that
+line 9 - we set out conditions where for each character in out phone lists
+line 10 - our condition is the input from the user will get the text version of that number
+line 11 - print the text version of what the user inputs
+
+###################################
+# * Chapter 23: Emoji Converter * #
+###################################
+
 
 
 
