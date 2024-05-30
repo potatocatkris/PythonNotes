@@ -1859,6 +1859,118 @@ line 8 and 9 - we set a for loop, where for each word in our words variable, it 
 ##########################
 2:30:42
 
+A function is a container for a few lines of code that preform a specific task. We use def or define a function. Give a descriptive name for your functions and use lower case
 
+$Terminal
+1 def greet_user():
+2     print('Hi there!')
+3     print('Welcome aboard')
+4
+5
+6 print("Start")
+7 greet_user()
+8 print("Finish")
 
+line 1 - we define our function by adding parenthesis and a colon. When ever we add a colon at the end of a line of code, we are telling Python we are defining a block of code. Blocks of code are indented and belong to the function
+line 2 and 3 - what our block of code will do
+line 4 and 5 - according to pep8, we add 2 blank lines after our function for the best format
+line 6 - print the value
+line 7 - we add our newely defined function
+line 8 - print the result
 
+Result:
+Start
+Hi there!
+Welcome aboard
+Finish
+
+###########################
+# * Chapter 25 Parameters #
+###########################
+2:35:32
+
+Parameters are placeholders for receiving information
+
+$Terminal
+1 def greet_user(name):
+2     print(f'Hi {name}!')
+3     print('Welcome aboard')
+4 
+5 
+6 print("Start")
+7 greet_user("John")
+8 print("Finish")
+
+line 1 - we add a name parameter in our function
+line 2 - we will use a formated string and add our name parameter
+line 7 - we set our name parameter to John
+
+Result: 
+Start
+Hi John!
+Welcome aboard
+Finish
+
+We can use the function over and over again with new value in our parameters. If we did not have the function we would have to repeat code over and over again
+
+$Terminal
+1 def greet_user(name):
+2     print(f'Hi {name}!')
+3     print('Welcome aboard')
+4
+5
+6 print("Start")
+7 greet_user("John")
+8 greet_user("Mary")
+9 print("Finish")
+
+Result:
+Start
+Hi John!
+Welcome aboard
+Hi Mary!
+Welcome aboard
+Finish
+
+Note: When a function has a parameter, we are obligated to give it a value, otherwise it will give us an error
+
+$Terminal
+1 def greet_user(name):
+2     print(f'Hi {name}!')
+3     print('Welcome aboard')
+4
+5
+6 print("Start")
+7 greet_user()
+8 greet_user("Mary")
+9 print("Finish")
+
+Result:
+    greet_user()
+TypeError: greet_user() missing 1 required positional argument: 'name'
+
+Parameters are the holes or placeholders that we define in our function for receiving information. Arguments are the actual pieces of information that we supply to the function. We can also define multiple parameters.
+
+$Terminal
+1 def greet_user(first_name, last_name):
+2     print(f'Hi {first_name}, {last_name}!')
+3     print('Welcome aboard')
+4 
+5 
+6 print("Start")
+7 greet_user("John", "Smith")
+8 print("Finish")
+
+line 1 - we add a first and last name parameter, we use a comma to seperate the parameters
+line 2 - use the formated string with our first and last name parameters
+line 7 - same as line 1, we add a comma and our second value to represent the second parameter
+
+Result:Start
+Hi John, Smith!
+Welcome aboard
+Finish
+
+##################################
+# * Chapter 26 Keyword Arguments #
+##################################
+2:39:36
