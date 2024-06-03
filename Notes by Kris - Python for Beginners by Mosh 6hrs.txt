@@ -1974,3 +1974,46 @@ Finish
 # * Chapter 26 Keyword Arguments #
 ##################################
 2:39:36
+
+
+Whenever we define parameters for our functions we should always supply values otherwise we get errors. Positional arguments are the arguments placed specifically so their position matters. In Python we also have keyword arguments and their positions do not matter.
+
+We use the same code as the one from the earlier chapter
+
+$Terminal
+1 def greet_user(first_name, last_name):
+2     print(f'Hi {first_name}, {last_name}!')
+3     print('Welcome aboard')
+4
+5
+6 print("Start")
+7 greet_user(last_name="John", last_name="Smith")
+8 print("Finish")
+
+line 7 - we add the keyword arguments before our value
+
+We can improve the visibility of code by adding keyword arguments, it comes in handy when we are working with numerical values
+
+$Terminal
+1 def greet_user(first_name, last_name):
+2     print(f'Hi {first_name}, {last_name}!')
+3     print('Welcome aboard')
+4
+5
+6 print("Start")
+7 greet_user(last_name="John", last_name="Smith")
+8 calc_cost(total=50, shipping=5, discount=0.1)
+9 print("Finish")
+
+line 8 - we used keyword arguments to display what the values mean so its visible for others to see and understand. We could of removed the keyword arugments and left just the numbers but that might confused some people
+
+For the most part, use positional arguments, but if you are using a function that takes numberical values see if you can impove the visibility of your code by using keyword arguments. If you were to add a keyword argument to the first value and a positional argument for the second value Python will yell at you that Positional argument after keyword argument. If we were to add a keyword argument after our positional arguemnt, Python would not have a problem with that.
+
+#################################
+# * Chapter 27 Return Statement #
+#################################
+2:45:06
+
+
+
+
