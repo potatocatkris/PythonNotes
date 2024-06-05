@@ -2014,6 +2014,131 @@ For the most part, use positional arguments, but if you are using a function tha
 #################################
 2:45:06
 
+We are going to create functions that return value, this is useful if we are doing some sort of calculation in our function and we want to return the to whoever is using our function
 
+Below we are going to define a square function
 
+$Terminal
+1 def square(number):
+2     return number * number
+3
+4 result = square(3)
+5 print(result)
 
+line 1 - we defne a square function, we add a number parameter
+line 2 - we use the return statement if we want to return the number outside of the function
+line 4 - we use the square function with a parameter of 3 and we store the value of that in the return variable
+
+Result:
+9
+
+We can also pass the function call directly in our print function without defining a seperate variable. This is useful if we want to write shorter code
+
+$Terminal
+1 def square(number):
+2     return number * number
+3 
+4 print(square(3))
+
+We can remove the result variable from our last lines of code and pass our square function as an argument for our print function
+line 4 - add our square function directly to our print function
+
+Result:
+9
+
+What happens if we remove the return statement?
+
+$Terminal
+1 def square(number):
+2     print(number * number)
+3
+4 print(square(3))
+
+Result:
+9
+None
+
+When we run this program Python interpretor will call the square function first, so we get our 9 result. By default all function return the value None, so if we do not a return statement after line 2, by default Python will return None because it is printing the value of None squared
+
+#############################################
+# * Chapter 28 Creating a reusable function #
+#############################################
+
+We will use our code we made in the emojis chapter 2:26:21 and reorganize by exracting a function out of it
+
+$Terminal
+1 def emoji_converter(message):
+2     words = message.split(' ')
+3     emojis = {
+4         ":)": "😊",
+5         ":(": "😞",
+6     }
+7     output = ""
+8     for word in words:
+9         output += emojis.get(word, word) + " "
+10        return output
+11
+12
+13 message = input(">")
+14 print(emoji_converter(message))
+
+line 1 - we define our function and name it emoji converter, this functions takes a parameter called message
+line 2 to 9 - we copy and paste our code from the emoji converer chapter
+line 10 - we add return statement 
+line 14 - we call the emoji converter function and print the result
+
+###########################
+# * Chapter 29 Exceptions #
+###########################
+2:53:54
+
+We are going to learn how to handle errors in our program. We will create a program where we ask the users age from the terminal
+
+$Terminal
+1 age = int(input('Age: '))
+2 print(age)
+
+If we enter our age, you will see that Python will say its exit code is 0, which means the program has termiated successfuly
+If we were to enter something asd, we will get ValueError: invalid literal for int() with base 10: 'asd' which means the string asd a valid whole number that can be converted to an interger and our program crashed
+
+In Python we have construct named try except. We use it to hand erros
+
+$Terminal
+1 try:
+2     age = int(input('Age: '))
+3     print(age)
+4 except ValueError:
+5     print('Invalid value')
+
+line 1 - we add our try construct, it will try to run the line of code indented in it
+line 4 - we add our except block along with the error it might encounter, in this case its ValueError. What this means is, if in our try block we encounter a ValueError, we will print Invalid value in line 5
+
+What happens if we were to add 0 to our age? technically speaking we shouldnt get any erros. When we run our program we will get an error ZeroDivisionError: division by zero. We can fix this by adding another exception that looks for the ZeroDivisionError
+
+$Terminal
+1 try:
+2     age = int(input('Age: '))
+3     income = 20000
+4     risk = income / age
+5     print(age)
+6 except ZeroDivisionError:
+7     print('Age cannot be 0.')
+8 except ValueError:
+9     print('Invalid value')
+
+line 6 - Python will look for ZeroDivisonError and will run its indented code in line 7
+
+#########################
+# * Chapter 30 Comments #
+#########################
+
+We can add comments in our code by add #. We use them to explain how and why things are written, not why it is written. Its useful when explainng what a certain function does. If you want to write multiple comments make sure to add a # before each comment
+
+$Terminal
+1 #yoooooo
+2 # hello there
+3 print("Sky is blue")
+
+########################
+# * Chapter 31 Classes #
+########################
