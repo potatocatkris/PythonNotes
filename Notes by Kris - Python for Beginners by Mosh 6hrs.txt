@@ -2142,3 +2142,105 @@ $Terminal
 ########################
 # * Chapter 31 Classes #
 ########################
+3:01:59
+
+We use classes to define different types (numbers, strings, booleans, lists, dictionaries, etc). The convention we use for naming our classes is different from the convention we use for variables and functions. For variables and functions we always use lower case and we seperate numerous words with an underscore. When we use class we capitalize all the words and we do not use an underscore to seperate the words
+
+#Example
+$Terminal
+1 class EmailClient
+2 class Point
+
+An object is an instance of a class. The class defines the blueprint for creating objects. To create an object we type out the name of our class and call it like a function, this creates a new object and returns it, so we can store that object in a variable. Our objects may have atributes and they are like variables that belong to a particular object.
+
+$Termianl
+1 class Point:
+2     def move(self):
+3         print("move")
+4 
+5     def draw(self):
+6         print("draw")
+7
+8
+9  point1 = Point()
+10 point1.x = 10
+11 point1.y = 20
+12 print(point1.x)
+13 point1.draw()
+14
+15 point2 = Point()
+16 point2.x = 1
+17 print(point2.x)
+
+line 1 - we use classes the define new types
+line 2 and 5 - we define methods for our class
+line 9 through 17 - we give attributes to our class and print some stuff
+
+#############################
+# * Chapter 32 Constructors #
+#############################
+3:07:58
+
+A constructor is a function that gets called at the time of creating an object. We use the initialize method when we create a new object
+
+$Terminal
+1 class Point:
+2     def __init__(self, x , y):
+3         self.x = x
+4         self.y = y
+5
+6     def move(self):
+7         print("move")
+8
+9     def draw(self):
+10        print("draw")
+11
+12
+13 point = Point(10, 20)
+14 print(point.x)
+
+line 1 - name our class
+line 2 - we define an initialize function, after self we add 2 parameters, x and y
+line 3 - we initialize our objects, self is a refrence to our object, in this case x is 10
+line 4 - same as above but for y
+line 13 - we create a variable and store our class in there with its x value being 10 and its y value being 20
+line 14 - we print our point variables x value
+
+Result:
+10
+
+#Excercise - we will define a new type, person, this person object should have a name attribute and a talk method
+
+$Terminal
+1 class Person:
+2     def __init__(self, name):
+3         self.name = name
+4     def talk(self):
+5         print(f"Hi, I am {self.name}")
+6 
+7 
+8 john = Person("John Smith")
+9 john.talk()
+10 
+11 bob = Person("Bob Smith")
+12 bob.talk()
+
+line 1 - name our class
+line 2 - define an initialize function, we add our name parameter
+line 3 - we initialize our object, we are refrencing name to our John Smith
+line 5 - we add a formated string with the refrence to our objects name, in this case John Smith and print the message
+line 8 - we create our person object 
+line 9 - have our person run the talk function
+line 11 - create another person object
+line 12 - have our person run the talk function
+
+Result:
+Hi, I am John Smith
+Hi, I am Bob Smith
+
+############################
+# * Chapter 33 Inheritance #
+############################
+3:14:54
+
+
