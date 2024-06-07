@@ -2243,4 +2243,62 @@ Hi, I am Bob Smith
 ############################
 3:14:54
 
+Inheritance is a mechannism for using code. Lets say we have a problem in a method, and we have multiple methods in other places, we would have to come back to every single place and fix the code. Thats why in programming we should not define something twice
 
+$Terminal
+1 class Dog:
+2     def walk(self):
+3         print("walk")
+4
+5
+6 class Cat:
+7     def walk(self):
+8         print("walk")
+
+See how we are defining stuff twice, we can solve this creating a mammal class and the dog and cat class inherite the methods
+
+$Terminal
+1 class Mammal:
+2     def walk(self):
+3         print("walk")
+5
+6
+7 class Dog(Mammal):
+8     pass
+9
+10
+11 class Cat(Mammal):
+12     pass        
+13
+14 dog1 = Dog()
+15 dog1.walk()
+
+
+line 1 through 3 - we create a mammal class and give it the walk method that we use for dog and cat
+line 7 and 11 - we add the Mammal class in our dog and cat class to inherite what Mammal has
+line 8 and 12 - we use pass to tell Python, move on the next line of code
+
+We can add a method specific to a class
+
+$Terminal
+1 class Mammal:
+2     def walk(self):
+3         print("walk")
+4
+5
+6 class Dog(Mammal):
+7     def bark(self):
+8         print("bark")
+9
+10
+11 class Cat(Mammal):
+12    def be_cute_and_amazing(self):
+13        print("Meow meooooow")
+14 
+15 cat1 = Cat()
+16 cat1.be_cute_and_amazing()
+
+########################
+# * Chapter 34 Modules #
+########################
+3:19:46
