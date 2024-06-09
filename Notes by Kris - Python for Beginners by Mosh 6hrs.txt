@@ -2302,3 +2302,121 @@ $Terminal
 # * Chapter 34 Modules #
 ########################
 3:19:46
+
+A module is file with some Python code. We use modules to organize our code into different files, just like different sections in a market. Lets make a simple kg to lbs converter and save the file. We will import that file in and use it
+
+converters.py - name the file this, we will use it later 
+$Terminal
+1 def lbs_to_kg(weight):
+2     return weight * 0.45
+3
+4
+5 def kg_to_lbs(weight):
+6     return weight / 0.45
+
+Open a new file and lets import our converters file
+
+$Terminal
+1 import converters
+2
+3 print(converters.kg_to_lbs((76))
+
+Result:
+168.8888888...
+
+We can also import specific functions from a module
+
+$Terminal
+1 import converters
+2 from converters import kg_to_lbs
+3
+4 kg_to_lbs(76)
+5 
+6 print(converters.kg_to_lbs((76)))
+
+line 2 - from our converters file we can import any function by holding down control and space on keyboard, this will pull up all the functions in that module
+line 4 - we can call this function, we do not have to use the converters prefix like we had to use in line 6
+
+We can save time by importing a specific function from a module instead of having to write out the modules prefix and then the function everytime we want to use it, we will end up with dry code
+
+#Exercise: Earlier in the course we had an exercise that had us look for the largest number in a list. We will create a utils module, inside that module we will have a function that will find the largest number in a list. Import the utilis module into the current module and call the findmax function, print the result
+
+Solution:
+
+$Terminal
+1 from utils import find_max
+2
+3 numbers = [3, 6, 2, 8, 4, 10]
+4 max = find_max(numbers)
+5 print(max)
+ 
+line 1 - from our utilis.py file, we import the find max function
+line 3 - we define our list before we call from it
+line 4 - we create a max variable that will contain the find max function, which it is pulling from the numbers list from line 3
+line 5 - print result
+
+Result:
+10
+
+Now one last thing before we finish this tutorial, here we have this little warning under max and the tool tip says shadows built in name max. The reason we see this is because we actually have a function called max. And it does the exact same job as our find max function. So this is actually built into python. But I ask you to do it as an exercise because it's a great exercise for beginners. Now, back to the warning, this warning is basically telling us that we are overwriting the built in max function in python so we are changing the meaning of this function, and this is considered a bad practice. 
+
+What happens if we try to print the max number using the max function built into Python? 
+
+$Terminal
+1 from utils import find_max
+2
+3 numbers = [3, 6, 2, 8, 4, 10]
+4 max = find_max(numbers)
+5 print(max(numbers))
+
+Rresult:
+TypeError: 'int' object is not callable
+
+We get this type error, int object is not callable, because max is now an integer, it's not a function, so we cannot call it. So to solve this problem, we can rename this variable to something else.
+
+#########################
+# * Chapter 35 Packages #
+#########################
+3:30:27
+
+Packages are another way to organize code. A project may contain hundreds if not thousands of modules, we dont want add all those modules, over time the directory. A better approach is to organize related modules, inside of a package, so a package is a container for multiple modules In file system terms a package is a directory or folder
+
+We can create a new python package, let's call our package ecommerce as you can see pycharm automatically creates this file for us so we don't have to manually create it. In this module we want to have a function for calculating the shipping costs.
+
+$Terminal
+1 def calc_shipping():
+2     print("calc_shipping")
+    
+
+There are two ways to import this module. We can import the entire module or we can import one of it's functions or classes. So let me show you both approaches. Instead of typing import shipping we type import ecommerce .shipping. we have to prefix it with the name of it's package
+
+$Terminal
+1 import ecommerce.shipping
+2 ecommerce.shipping.calc_shipping()
+
+However with this approach, every time you want to call one of the functions to this module, we'll have to prefix it with ecommerce. shipping. that is very verbose. So when working with packages we often use the second approach, using the from statement
+
+$Terminal
+1 from ecommerce.shipping import calc_shipping
+2
+3 calc_shipping()
+4 calc_shipping()
+5 calc_shipping()
+
+Now we don't have to prefix this function with ecommerce.shipping, and we can call it multiple times in this module, so our code is a little bit shorter
+
+
+But what if you want to use multiple functions in this shipping module? We can import the entire module and then access all the functions or classes in that module
+
+$Terminal
+1 from ecommerce.shipping import calc_shipping
+2 
+3 calc_shipping()
+
+#########################################
+# * Chapter 36 Generating random values #
+#########################################
+3:36:38
+
+
+
