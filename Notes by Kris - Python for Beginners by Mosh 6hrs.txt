@@ -2569,4 +2569,11 @@ app.py
 ##############################
 3:51:02
 
+Even though python's standard library is comprehensive and has so many modules for common tasks, it's not complete by any means. That's why we have this directory called python package index or pypi
+
+##############################################
+# * Chapter 39: Excel spreadsheet automation #
+##############################################
+3:56:13
+
 
