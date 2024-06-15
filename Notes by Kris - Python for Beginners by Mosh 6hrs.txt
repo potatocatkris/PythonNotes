@@ -1854,9 +1854,9 @@ lines 3 to 6 we set our list using squigly brackets
 line 7 - we set an output and leave it empty
 line 8 and 9 - we set a for loop, where for each word in our words variable, it will check our list. If the key word is there, it will get its new emoji value from the list, if its key word is not there, the original value is passed through. We use the get method to supply a default value, we want to get an item with the key word, otherwise use that word a default value. We also add a space at the end
 
-##########################
-# * Chapter 24 Functions #
-##########################
+###########################
+# * Chapter 24: Functions #
+###########################
 2:30:42
 
 A function is a container for a few lines of code that preform a specific task. We use def or define a function. Give a descriptive name for your functions and use lower case
@@ -1884,9 +1884,9 @@ Hi there!
 Welcome aboard
 Finish
 
-###########################
-# * Chapter 25 Parameters #
-###########################
+############################
+# * Chapter 25: Parameters #
+############################
 2:35:32
 
 Parameters are placeholders for receiving information
@@ -1970,9 +1970,9 @@ Hi John, Smith!
 Welcome aboard
 Finish
 
-##################################
-# * Chapter 26 Keyword Arguments #
-##################################
+###################################
+# * Chapter 26: Keyword Arguments #
+###################################
 2:39:36
 
 
@@ -2009,9 +2009,9 @@ line 8 - we used keyword arguments to display what the values mean so its visibl
 
 For the most part, use positional arguments, but if you are using a function that takes numberical values see if you can impove the visibility of your code by using keyword arguments. If you were to add a keyword argument to the first value and a positional argument for the second value Python will yell at you that Positional argument after keyword argument. If we were to add a keyword argument after our positional arguemnt, Python would not have a problem with that.
 
-#################################
-# * Chapter 27 Return Statement #
-#################################
+##################################
+# * Chapter 27: Return Statement #
+##################################
 2:45:06
 
 We are going to create functions that return value, this is useful if we are doing some sort of calculation in our function and we want to return the to whoever is using our function
@@ -2060,9 +2060,9 @@ None
 
 When we run this program Python interpretor will call the square function first, so we get our 9 result. By default all function return the value None, so if we do not a return statement after line 2, by default Python will return None because it is printing the value of None squared
 
-#############################################
-# * Chapter 28 Creating a reusable function #
-#############################################
+##############################################
+# * Chapter 28: Creating a reusable function #
+##############################################
 
 We will use our code we made in the emojis chapter 2:26:21 and reorganize by exracting a function out of it
 
@@ -2087,9 +2087,9 @@ line 2 to 9 - we copy and paste our code from the emoji converer chapter
 line 10 - we add return statement 
 line 14 - we call the emoji converter function and print the result
 
-###########################
-# * Chapter 29 Exceptions #
-###########################
+############################
+# * Chapter 29: Exceptions #
+############################
 2:53:54
 
 We are going to learn how to handle errors in our program. We will create a program where we ask the users age from the terminal
@@ -2128,9 +2128,9 @@ $Terminal
 
 line 6 - Python will look for ZeroDivisonError and will run its indented code in line 7
 
-#########################
-# * Chapter 30 Comments #
-#########################
+##########################
+# * Chapter 30: Comments #
+##########################
 
 We can add comments in our code by add #. We use them to explain how and why things are written, not why it is written. Its useful when explainng what a certain function does. If you want to write multiple comments make sure to add a # before each comment
 
@@ -2139,9 +2139,9 @@ $Terminal
 2 # hello there
 3 print("Sky is blue")
 
-########################
-# * Chapter 31 Classes #
-########################
+#########################
+# * Chapter 31: Classes #
+#########################
 3:01:59
 
 We use classes to define different types (numbers, strings, booleans, lists, dictionaries, etc). The convention we use for naming our classes is different from the convention we use for variables and functions. For variables and functions we always use lower case and we seperate numerous words with an underscore. When we use class we capitalize all the words and we do not use an underscore to seperate the words
@@ -2176,9 +2176,9 @@ line 1 - we use classes the define new types
 line 2 and 5 - we define methods for our class
 line 9 through 17 - we give attributes to our class and print some stuff
 
-#############################
-# * Chapter 32 Constructors #
-#############################
+##############################
+# * Chapter 32: Constructors #
+##############################
 3:07:58
 
 A constructor is a function that gets called at the time of creating an object. We use the initialize method when we create a new object
@@ -2238,9 +2238,9 @@ Result:
 Hi, I am John Smith
 Hi, I am Bob Smith
 
-############################
-# * Chapter 33 Inheritance #
-############################
+#############################
+# * Chapter 33: Inheritance #
+#############################
 3:14:54
 
 Inheritance is a mechannism for using code. Lets say we have a problem in a method, and we have multiple methods in other places, we would have to come back to every single place and fix the code. Thats why in programming we should not define something twice
@@ -2298,9 +2298,9 @@ $Terminal
 15 cat1 = Cat()
 16 cat1.be_cute_and_amazing()
 
-########################
-# * Chapter 34 Modules #
-########################
+#########################
+# * Chapter 34: Modules #
+#########################
 3:19:46
 
 A module is file with some Python code. We use modules to organize our code into different files, just like different sections in a market. Lets make a simple kg to lbs converter and save the file. We will import that file in and use it
@@ -2374,9 +2374,9 @@ TypeError: 'int' object is not callable
 
 We get this type error, int object is not callable, because max is now an integer, it's not a function, so we cannot call it. So to solve this problem, we can rename this variable to something else.
 
-#########################
-# * Chapter 35 Packages #
-#########################
+##########################
+# * Chapter 35: Packages #
+##########################
 3:30:27
 
 Packages are another way to organize code. A project may contain hundreds if not thousands of modules, we dont want add all those modules, over time the directory. A better approach is to organize related modules, inside of a package, so a package is a container for multiple modules In file system terms a package is a directory or folder
@@ -2413,10 +2413,160 @@ $Terminal
 2 
 3 calc_shipping()
 
-#########################################
-# * Chapter 36 Generating random values #
-#########################################
+##########################################
+# * Chapter 36: Generating random values #
+##########################################
 3:36:38
 
+Python comes with a standard library that contains several modules for common tasks such as sending emails, working with date and time, generating random values and passwords and so on
+
+Search "Python 3 module index" or look here https://docs.python.org/3/library/index.html
+
+Lets import the random module. The random module generates a random number between 0 and 1
+
+$Terminal
+1 import random
+2 
+3 for i in range(3):
+4    print(random.random())
+
+line 1 - import the random module
+line 3 - we use the range function to create a range object, in each iteration it will spit out a value
+line 4 - print the 3 random iterations out
+
+Result:
+0.185176013804624
+0.20914925765149406
+0.2523156640613816
+
+What if we want a random range between 10 and 20? we use the randint
+
+$Terminal
+1 import random
+2 
+3 for i in range(3):
+4    print(random.randint(10, 20))
+
+line 4 - we use randint to specify a random range, we give it 2 arguments
+
+Result:
+19
+14
+13
+ 
+Lets say you have a list of team members and you want to pick a random team member
+
+$Terminal
+1 import random
+2
+3 members = ['John', 'Mary', 'Bob', 'Mosh']
+4 leader = random.choice(members)
+5 print(leader)
+
+line 3 - create a members variable with their names
+line 4 - create a leader variable where we use the random choice to choose from our member variable
+line 5 - print the new leaders name
+
+Result:
+Bob
+
+#Exercise: Create a program that will give you 2 random dice roll numbers. We need to define a class called dice. We will have a method called roll, every time we call the method we should get a tuple.
+
+$Terminal
+1 import random
+2 
+3 class Dice:
+4 
+5     def roll(self):
+6         first = random.randint(1, 6)
+7         second = random.randint(1, 6)
+8         return (first, second)
+9
+10
+11 dice = Dice()
+12 print(dice.roll())
+
+line 3 - we define a class Dice
+line 5 - we define a roll method 
+line 6 - we create a first variable that will generate a random value from 1-6 for its first roll
+line 7 - same as above just as a second roll
+line 8 - we return the first and second variables as a tuple, here we do not need parethesis if we are returning a tuple from a function
+line 11 - we create a object of this type
+line 12 - print the result
+
+Result: 
+(2, 4)
+
+#######################################
+# * Chapter 37: Files and Directories #
+#######################################
+3:44:52
+
+Lets learn how to use directiories in Python. Lets go to the Path module in https://docs.python.org/3/library/index.html. It provides classes that we can create objects to work with directories
+
+Absolute path: a path starting from the root
+Relative path: a path starting from the current directory 
+
+$Terminal
+1 from pathlib import Path
+2 
+3 path = Path("ecommerce")
+4 print(path.exists())
+
+line 1 - import the Path module
+line 3 - create a path object, we pass our ecommerce directory
+line 4 - we check to see if the path exists
+
+Result:
+True
+
+If we change the path to ecommerce1 it should give it False, since that path is not there
+
+$Terminal
+1 from pathlib import Path
+2 
+3 path = Path("ecommerce1")
+4 print(path.exists())
+
+Return:
+False
+
+We can create new path
+
+$Terminal
+1 from pathlib import Path
+2 
+3 path = Path("ecommerce1")
+4 print(path.mkdir())
+
+line 4 - mkdir is to make a new directory
+
+Result:
+None - if you look at the project panel you can see here we have a new directory called emails
+
+.mkdir - make a new directory
+.rmdir - remove a directory
+.glob - this method searches for directories in the current path, we need to pass a string to define the search pattern
+.glob('*') - asteriks searches for everything
+.glob('*.*') - searches for all the files
+.glob('*.py') - searches for all .py files
+
+$Terminal
+1 from pathlib import Path
+2 
+3 path = Path()
+4 for file in path.glob('*.py'):
+5     print(file)
+
+line 4 - create a for loop where the generator object that is returned from the glob method
+line 5- print the result
+
+Result:
+app.py
+
+##############################
+# * Chapter 38: Pypi and Pip #
+##############################
+3:51:02
 
 
